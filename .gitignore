@@ -1,0 +1,5 @@
+# Compiled binary addons
+build
+
+# Dependency directory
+node_modules
