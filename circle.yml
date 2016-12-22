@@ -1,0 +1,13 @@
+---
+machine:
+  pre:
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 20
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
+  node:
+    version: 4.5.0
+
+test:
+  override:
+    - npm run --silent lint -- --max-warnings 0
+    - npm run --silent lint_md
+    - npm run ft_test
