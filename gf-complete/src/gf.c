@@ -485,7 +485,7 @@ int gf_init_hard(gf_t *gf, int w, int mult_type,
   gf_cpu_identify();
 
   if (gf_error_check(w, mult_type, region_type, divide_type, 
-                     arg1, arg2, prim_poly, base_gf) == 0) return 0;
+                     arg1, arg2, prim_poly, base_gf) == 0) return -_gf_errno;
 
   sz = gf_scratch_size(w, mult_type, region_type, divide_type, arg1, arg2);
   if (sz <= 0) return 0;  /* This shouldn't happen, as all errors should get caught
