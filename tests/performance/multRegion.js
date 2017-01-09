@@ -40,10 +40,10 @@ function test(gfDim, xorFlag) {
 
     it('multRegion', () => {
         sizes.forEach((size, sizeIdx) => {
+            const bufA = crypto.randomBytes(size);
+            const bufB = crypto.randomBytes(size);
             const start = process.hrtime();
             for (let idx = 0; idx < itersNb[sizeIdx]; idx++) {
-                const bufA = Buffer.allocUnsafe(size);
-                const bufB = Buffer.allocUnsafe(size);
                 const symb = Math.floor(Math.random() * (gfCard - 1)) + 1;
                 gf.multRegion(symb, bufA, bufB, size, xorFlag);
             }
