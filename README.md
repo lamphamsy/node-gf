@@ -1,5 +1,7 @@
 # node-gf
 
+[![CircleCI](https://circleci.com/gh/lamphamsy/node-gf.svg?style=svg)](https://circleci.com/gh/lamphamsy/node-gf)
+
 This is a native Node.js module (C/C++) that wraps James S. Plank's GF-Complete
  code
 
