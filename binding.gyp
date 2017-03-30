@@ -29,6 +29,14 @@
                    },
                 }
             ],
+            ['OS == "linux"', {
+                'cflags': [
+                    '-O3',
+                    '-march=native',
+                    '-mavx2',
+                    '-fPIC -Wall -Wpointer-arith',
+                ],
+            }],
         ],
     }
   ]
