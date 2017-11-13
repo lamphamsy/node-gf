@@ -60,7 +60,7 @@ Available types of multiplication, division, region operations are the same as
 of the original GF-complete Library and shown as below.
 
 `node-gf` | origin `GF-complete`
----|---|
+---|---
 Multiplication |
 `default` | `GF_MULT_DEFAULT`
 `shift` | `GF_MULT_SHIFT`
@@ -74,12 +74,12 @@ Multiplication |
 `log_zero_ext` | `GF_MULT_LOG_ZERO_EXT`
 `split` | `GF_MULT_SPLIT_TABLE`
 `composite` | `GF_MULT_COMPOSITE`
-|
+||
 Division |
 `default` | `GF_DIVIDE_DEFAULT`
 `matrix` | `GF_DIVIDE_MATRIX`
 `euclid` | `GF_DIVIDE_EUCLID`
-|
+||
 Region |
 `default` | `GF_REGION_DEFAULT`
 `double` | `GF_REGION_DOUBLE_TABLE`
