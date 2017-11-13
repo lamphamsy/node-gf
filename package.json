@@ -27,6 +27,7 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
+    "install": "git submodule init; git submodule update; node-gyp rebuild",
     "ft_test": "mocha tests/functional/*.js",
     "lint": "eslint $(git ls-files '*.js')",
     "lint_md": "mdlint $(git ls-files '*.md')",
