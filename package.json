@@ -1,6 +1,6 @@
 {
   "name": "node-gf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a native Node.js module (C/C++) that wraps James S. Plank's GF-Complete code",
   "main": "index.js",
   "repository": {

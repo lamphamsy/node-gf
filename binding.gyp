@@ -25,6 +25,7 @@
                         '-march=native',
                         '-mavx2',
                         '-fPIC -Wall -Wpointer-arith',
+                        '-fno-operator-names',
                     ],
                    },
                 }
@@ -35,6 +36,7 @@
                     '-march=native',
                     '-mavx2',
                     '-fPIC -Wall -Wpointer-arith',
+                    '-fno-operator-names',
                 ],
             }],
         ],

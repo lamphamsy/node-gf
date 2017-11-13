@@ -111,8 +111,8 @@ NAN_METHOD(init) {
     }
     int status = gf_init_hard(&gf, w, mult_type, region_type, divide_type,
         prim_poly, arg1, arg2, base_gf, NULL);
-    if (status < 1) {
-        gfIndex = status;
+    if (status < 1) {   // init got error
+        gfIndex = -_gf_errno;   // return error code
     } else {
         gfList.push_back(gf);
         gfIndex = gfList.size() - 1;

@@ -5,9 +5,6 @@
 This is a native Node.js module (C/C++) that wraps James S. Plank's GF-Complete
  code
 
-GF-complete's source codes (`gf-complete` directory) are originally from
-[Jerasure Library](http://lab.jerasure.org/jerasure/gf-complete)
-
 The main target of GF-complete is to enhance the multiplication of a region
 of data (buffer) and a symbol of the Galois field. We introduce APIs to
 facilitate the use of `node-gf` library:
@@ -22,6 +19,18 @@ facilitate the use of `node-gf` library:
 
 Moreover, multi-threads can be enable in such operations so that each
 multiplication of a buffer with a symbol is performed in a thread.
+
+## Prerequisite
+
+GF-complete's source codes (`gf-complete` directory) should be in the
+`gf-complete` directory of the project. Among different versions of the
+library, we choose the source codes from
+[Jerasure Library](http://lab.jerasure.org/jerasure/gf-complete)
+that can be retrieved by running:
+
+```
+git submodule init; git submodule update
+```
 
 ## API
 
