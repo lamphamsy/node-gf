@@ -22,15 +22,11 @@ multiplication of a buffer with a symbol is performed in a thread.
 
 ## Prerequisite
 
-GF-complete's source codes (`gf-complete` directory) should be in the
-`gf-complete` directory of the project. Among different versions of the
-library, we choose the source codes from
+GF-complete's source codes should be in the `gf-complete` directory of the
+project. You can get GF-complete from different sources. By default, we choose
+the source codes from
 [Jerasure Library](http://lab.jerasure.org/jerasure/gf-complete)
-that can be retrieved by running:
-
-```
-git submodule init; git submodule update
-```
+that is retrieved when the package is installed.
 
 ## API
 
