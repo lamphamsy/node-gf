@@ -3,9 +3,7 @@
     {
         "target_name": "gf",
         "sources": [
-            "gf.cpp",
-            "<!@(node -p \"require('fs').readdirSync('./gf-complete/src').map(f=>'gf-complete/src/'+f).join(' ')\")",
-            #TODO: neon src files if relevant
+            "gf.cpp"
         ],
         "include_dirs" : [
             "<!(node -e \"require('nan')\")",
@@ -17,25 +15,19 @@
         "conditions": [
             ['OS == "mac"', {
                 'xcode_settings': {
-                    # gcc on the mac builds horribly unoptimized sse code in debug
-                    # mode. Since this is rarely going to be debugged, run with full
-                    # optimizations in Debug as well as Release.
                     'GCC_OPTIMIZATION_LEVEL': '3',  # -O3
                     'OTHER_CFLAGS': [
-                        '-march=native',
-                        '-fPIC -Wall -Wpointer-arith',
                         '-fno-operator-names',
                     ],
-                   },
-                }
-            ],
+                },
+                "libraries": [ "<(module_root_dir)/gf-complete/src/.libs/libgf_complete.dylib" ]
+            }],
             ['OS == "linux"', {
                 'cflags': [
                     '-O3',
-                    '-march=native',
-                    '-fPIC -Wall -Wpointer-arith',
                     '-fno-operator-names',
                 ],
+                "libraries": [ "<(module_root_dir)/gf-complete/src/.libs/libgf_complete.so" ]
             }],
         ],
     }
