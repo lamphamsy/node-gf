@@ -1,6 +1,6 @@
 {
   "name": "node-gf",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "This is a native Node.js module (C/C++) that wraps James S. Plank's GF-Complete code",
   "main": "index.js",
   "repository": {
@@ -27,8 +27,9 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "get-gfc": "git clone http://lab.jerasure.org/jerasure/gf-complete.git",
-    "install": "npm run get-gfc && node-gyp rebuild",
+    "get-gfc": "rm -rf gf-complete && git clone http://lab.jerasure.org/jerasure/gf-complete.git",
+    "make-gfc": "cd gf-complete; sh autogen.sh && ./configure --prefix=$PWD/libs && make && make install",
+    "install": "npm run get-gfc && npm run make-gfc && node-gyp rebuild",
     "ft_test": "mocha tests/functional/*.js",
     "lint": "eslint $(git ls-files '*.js')",
     "lint_md": "mdlint $(git ls-files '*.md')",
