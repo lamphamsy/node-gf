@@ -23,7 +23,6 @@
                     'GCC_OPTIMIZATION_LEVEL': '3',  # -O3
                     'OTHER_CFLAGS': [
                         '-march=native',
-                        '-mavx2',
                         '-fPIC -Wall -Wpointer-arith',
                         '-fno-operator-names',
                     ],
@@ -34,7 +33,6 @@
                 'cflags': [
                     '-O3',
                     '-march=native',
-                    '-mavx2',
                     '-fPIC -Wall -Wpointer-arith',
                     '-fno-operator-names',
                 ],
