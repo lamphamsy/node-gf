@@ -3,8 +3,6 @@ machine:
   pre:
     - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 20
     - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
-  environment:
-    LD_LIBRARY_PATH: $HOME/node-gf/gf-complete/libs/lib
   node:
     version: 4.5.0
 

@@ -7,10 +7,10 @@
         ],
         "include_dirs" : [
             "<!(node -e \"require('nan')\")",
-            "gf-complete/include"
+            "<(module_root_dir)/gf-complete/libs/include"
         ],
         'variables': {
-            'have_neon': '<!()'
+            'LIBDIR': '<(module_root_dir)/gf-complete/libs/lib',
         },
         "conditions": [
             ['OS == "mac"', {
@@ -20,14 +20,17 @@
                         '-fno-operator-names',
                     ],
                 },
-                "libraries": [ "<(module_root_dir)/gf-complete/src/.libs/libgf_complete.dylib" ]
+                "libraries": [ "<(LIBDIR)/libgf_complete.dylib" ]
             }],
             ['OS == "linux"', {
                 'cflags': [
                     '-O3',
                     '-fno-operator-names',
                 ],
-                "libraries": [ "<(module_root_dir)/gf-complete/src/.libs/libgf_complete.so" ]
+                'ldflags': [
+                    '-Wl,-rpath -Wl,<(LIBDIR)',
+                ],
+                "libraries": [ "<(LIBDIR)/libgf_complete.so" ]
             }],
         ],
     }
